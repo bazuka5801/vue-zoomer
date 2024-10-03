@@ -28,11 +28,12 @@ export default {
     return {
       selIndex: 0,
       urlImageList: [
-        'https://unpkg.com/vue-zoomer@0.3.9/dist/demo/landscape-1.7df5f544.jpg',
-        'https://unpkg.com/vue-zoomer@0.3.9/dist/demo/landscape-2.ba8bc5c7.jpg',
-        'https://unpkg.com/vue-zoomer@0.3.9/dist/demo/landscape-3.f5787143.jpg',
-        'https://unpkg.com/vue-zoomer@0.3.9/dist/demo/landscape-4.7217d472.jpg',
-        'https://unpkg.com/vue-zoomer@0.3.9/dist/demo/landscape-5.f1faccaa.jpg',
+        { type: 'video', url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'},
+        { type: 'audio', url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'},
+       { type: 'image', url:  'https://unpkg.com/vue-zoomer@0.3.9/dist/demo/landscape-2.ba8bc5c7.jpg'},
+        { type: 'image', url: 'https://unpkg.com/vue-zoomer@0.3.9/dist/demo/landscape-3.f5787143.jpg'},
+        { type: 'image', url: 'https://unpkg.com/vue-zoomer@0.3.9/dist/demo/landscape-4.7217d472.jpg'},
+        { type: 'image', url: 'https://unpkg.com/vue-zoomer@0.3.9/dist/demo/landscape-5.f1faccaa.jpg'},
       ],
     }
   },

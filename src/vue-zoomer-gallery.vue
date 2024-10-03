@@ -35,14 +35,28 @@
       :mouse-wheel-to-zoom="mouseWheelToZoom"
       @swipe="onImageSwipe"
     >
+    <template v-if="selIndex + i - 1 > -1 && selIndex + i - 1 < list.length">
       <img
-        v-if="selIndex + i - 1 > -1 && selIndex + i - 1 < list.length"
-        :src="list[selIndex + i - 1]"
+        v-if="list[selIndex + i - 1].type === 'image'"
+        :src="list[selIndex + i - 1].url"
         draggable="false"
         style="object-fit: contain; width: 100%; height: 100%;"
         @load="onImageLoad(selIndex + i - 1, $event)"
         @dragstart="onImageDragStart"
       >
+      <template v-else-if="list[selIndex + i - 1].type === 'video'">
+        <slot name="video" :url="list[selIndex + i - 1].url" >
+          <video controls :src="list[selIndex + i - 1].url" style="width: 100%; height: 100%;"></video>
+        </slot>
+      </template>
+      <template v-else-if="list[selIndex + i - 1].type === 'audio'">
+        <slot name="audio" :url="list[selIndex + i - 1].url" >
+          <div style="width: 100%; height: 100%; display: grid; place-items: center;">
+            <audio  controls :src="list[selIndex + i - 1].url"></audio>
+          </div>
+        </slot>
+      </template>
+    </template>
     </v-zoomer>
   </div>
 </template>
