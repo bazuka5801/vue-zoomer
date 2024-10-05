@@ -46,7 +46,7 @@
       >
       <template v-else-if="list[selIndex + i - 1].type === 'video'">
         <slot name="video" :url="list[selIndex + i - 1].url" >
-          <video controls :src="list[selIndex + i - 1].url" style="width: 100%; height: 100%;"></video>
+          <video controls :src="list[selIndex + i - 1].url" :poster="list[selIndex + i - 1].poster || ''" style="width: 100%; height: 100%;"></video>
         </slot>
       </template>
       <template v-else-if="list[selIndex + i - 1].type === 'audio'">
